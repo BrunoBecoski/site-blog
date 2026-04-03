@@ -12,16 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-export const metadata = {
-  title: 'site-blog',
-};
 export default function Home() {
   return (
     <div className="min-h-screen min-w-full bg-gray-700">
-     <h2  className="text-4xl text-white">Site.Set</h2>
+      <h2  className="text-4xl text-white">Site.Set</h2>
 
-     <Button variant="secondary">Botão</Button>
+      <Button variant="secondary" className="hover:cursor-pointer">Botão</Button>
     </div>
   );
 }
