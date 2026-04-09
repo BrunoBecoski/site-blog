@@ -16,7 +16,7 @@ export const Header = () => {
             
             <ActiveLink href="/blog">Blog</ActiveLink>
             
-            <Button variant="secondary" className="rounded-full" asChild>
+            <Button variant="secondary" asChild>
               <Link href="/comecar">Começar</Link>
             </Button>
           </div>
