@@ -1,17 +1,11 @@
 import { HeartHandshake, PaintbrushVertical, Store } from "lucide-react";
-import { PT_Sans_Caption } from "next/font/google";
-
-const ptSansCaption = PT_Sans_Caption({
-  subsets: ['latin'],
-  weight: '700'
-})
 
 export const SupportSection = () => {
   return (
     <section className="pt-10 md:py-32 md:bg-[url(/support-section.svg)] md:bg-cover">
       <div className="container py-12 flex flex-col items-center gap-12 bg-linear-to-r from-gray-500 to-gray-700 md:bg-none">
 
-        <h2 className={`${ptSansCaption.className} text-balance text-center text-heading-xl text-gray-100 max-w-lg`}>
+        <h2 className="text-balance text-center text-heading-xl text-gray-100 font-sans max-w-lg">
           Sua loja de afiliados, simples, do jeito que deveria ser
         </h2>
 
@@ -20,7 +14,7 @@ export const SupportSection = () => {
             <div className="flex size-9 items-center justify-center rounded-lg bg-blue-300 mb-4">
               <PaintbrushVertical className="size-5 text-white" />
             </div>
-            <strong className="text-heading-sm text-gray-100">
+            <strong className="text-heading-sm text-gray-100 font-sans">
               Personalize seu site
             </strong>
             <p className="text-body-sm text-gray-200">
@@ -32,7 +26,7 @@ export const SupportSection = () => {
             <div className="flex size-9 items-center justify-center rounded-lg bg-cyan-200 mb-4">
               <Store className="size-5 text-white" />
             </div>
-            <strong className="text-heading-sm text-gray-100">
+            <strong className="text-heading-sm text-gray-100 font-sans">
               Venda de qualquer loja
             </strong>
             <p className="text-body-sm text-gray-200">
@@ -44,7 +38,7 @@ export const SupportSection = () => {
             <div className="flex size-9 items-center justify-center rounded-lg bg-blue-300 mb-4">
               <HeartHandshake className="size-5 text-white" />
             </div>
-            <strong className="text-heading-sm text-gray-100">
+            <strong className="text-heading-sm text-gray-100 font-sans">
               Receba suporte amigável
             </strong>
 
