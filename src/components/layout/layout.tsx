@@ -2,6 +2,7 @@ import { Inter, PT_Sans_Caption } from "next/font/google";
 
 import { Header } from "./header";
 import { Footer } from "./footer";
+import { CallToAction } from "./call-to-action";
 
 type LayoutProps = {
   children: React.ReactNode
@@ -26,6 +27,8 @@ export const Layout = ({ children }: LayoutProps) => {
       <main className="flex-1 flex flex-col mt-24">
         {children}
       </main>
+
+      <CallToAction />
 
       <Footer />
     </div>
