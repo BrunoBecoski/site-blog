@@ -1,22 +1,43 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export const PostCard = () => {
+type AuthorProps = {
+  name: string
+  avatar: string
+}
+
+type PostCardProps = {
+  slug: string
+  date: string
+  title: string
+  description: string
+  image: string
+  author: AuthorProps
+}
+
+export const PostCard = ({
+  slug,
+  date,
+  title,
+  description,
+  image,
+  author
+}: PostCardProps) => {
   return (
     <Link
-      href={`/blog/post`}
+      href={`/blog/${slug}`}
       className="w-full max-w-2xl rounded-xl border-2 border-gray-400 hover:border-blue-300 bg-gray-600 overflow-hidden transition-all duration-300"
     >
       <div className="p-2 rounded-md overflow-hidden">
         <div className="relative">
-          <div className="absolute top-0 right-0">
-            <span className="text-body-sm text-gray-300 bg-gray-600 p-2.5 rounded-bl-md">
-              20/12/24
+          <div className="absolute top-0 right-0 bg-gray-600 pt-1 pr-2 pb-2 pl-3 rounded-bl-md backdrop-blur-sm">
+            <span className="text-body-sm text-gray-300 ">
+              {date}
             </span>
           </div>
 
           <Image
-            src="/assets/primeiro-post.png"
+            src={image}
             alt="post"
             width={290}
             height={144}
@@ -25,26 +46,26 @@ export const PostCard = () => {
 
           <div className="my-4 space-y-2">
             <h3 className="text-heading-sm text-gray-100 font-sans">
-              Transformando seu negócio em uma loja virtual
+              {title}
             </h3>
 
             <p className="text-body-sm text-gray-300 line-clamp-2">
-              Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos.
+              {description}
             </p>
           </div>
 
           <div className="flex items-center gap-3 border-t border-gray-400 pt-3">
             <div className="relative size-8 rounded-full border-2 border-blue-200 overflow-hidden">
               <Image
-                src="/customer-03.png"
-                alt="Aspen Dokidis"
+                src={author.avatar}
+                alt={author.name}
                 width={30}
                 height={30}
                 className="object-cover"
               />
             </div>
 
-            <span className="text-body-sm text-gray-300">Aspen Dokidis</span>
+            <span className="text-body-sm text-gray-300">{author.name}</span>
           </div>
         </div>
       </div>
