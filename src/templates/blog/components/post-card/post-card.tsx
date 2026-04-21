@@ -59,6 +59,7 @@ export const PostCard = ({
 
         <Avatar.Container>
           <Avatar.Image
+            size="xs"
             src={author.avatar}
             alt={author.name}
           />

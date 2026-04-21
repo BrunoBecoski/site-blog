@@ -37,6 +37,7 @@ export const CustomerStorySection = () => {
 
               <Avatar.Container>
                 <Avatar.Image
+                  size="sm"
                   src={customer.author.avatar}
                   alt={customer.author.name}
                 />

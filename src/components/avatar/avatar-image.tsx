@@ -1,14 +1,24 @@
+import { cn } from "@/lib/utils"
 import Image, { ImageProps } from "next/image"
 
-type AvatarImageProps = ImageProps;
+type AvatarSize = 'xs' | 'sm'
 
-export const AvatarImage = ({ width = 40, height = 40, ...props }: AvatarImageProps) => {
+type AvatarImageProps = Omit<ImageProps, 'width' | 'height'> & {
+  size?: AvatarSize
+}
+
+const avatarSize = {
+  xs: 'size-7',
+  sm: 'size-9',
+}
+
+export const AvatarImage = ({ size = 'sm', ...props }: AvatarImageProps) => {
   return (
-    <Image
-      className="rounded-full border-2 border-blue-200"
-      width={width}
-      height={height}
-      {...props}
-    />
+    <div className={cn(
+      'relative overflow-hidden rounded-full border-2 border-blue-200',
+      avatarSize[size]
+    )}>
+      <Image {...props} fill />
+    </div>
   )
 }
