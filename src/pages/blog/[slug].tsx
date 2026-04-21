@@ -2,9 +2,10 @@ import { useRouter } from "next/router";
 import { allPosts } from "contentlayer/generated";
 import Link from "next/link";
 import Image from "next/image";
-import { Inbox } from "lucide-react";
+import { Inbox, LucideLink } from "lucide-react";
 
 import { Avatar } from "@/components/avatar";
+import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/markdown";
 import {
   Breadcrumb,
@@ -13,6 +14,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
+import { Facebook, LinkedIn, Slack } from "@/components/icons";
 
 export default function PostPage() {
   const router = useRouter()
@@ -44,7 +46,7 @@ export default function PostPage() {
             </BreadcrumbList>
           </Breadcrumb>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
             <article className="bg-gray-600 rounded-lg overflow-hidden border-2 border-gray-400">
               <figure className="relative w-full overflow-hidden aspect-30/11 rounded-t-lg">
                 <Image
@@ -88,6 +90,36 @@ export default function PostPage() {
                 />
               </div>
             </article>
+
+            <aside className="space-y-6">
+              <div className="bg-gray-700 p-4 md:p-6">
+                <h2 className="mb-5 text-white text-heading-xs">
+                  Compartilhar
+                </h2>
+
+                <div className="space-y-3 flex flex-col">
+                  <Button variant="outline" className="group justify-start gap-2">
+                    <LinkedIn className="group-hover:fill-blue-200"/>
+                    LinkedIn
+                  </Button>
+          
+                  <Button variant="outline" className="group justify-start gap-2">
+                    <Facebook className="group-hover:fill-blue-200"/>
+                    Facebook
+                  </Button>
+
+                  <Button variant="outline" className="group justify-start gap-2">
+                    <Slack className="group-hover:fill-blue-200"/>
+                    Slack
+                  </Button>
+
+                  <Button variant="outline" className="justify-start gap-2">
+                    <LucideLink className="size-4" />
+                    Slack
+                  </Button>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       }
