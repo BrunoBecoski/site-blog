@@ -1,4 +1,4 @@
-import { defineDocumentType, defineNestedType, makeSource } from "contentlayer/source-files"
+import { defineDocumentType, defineNestedType, makeSource } from "contentlayer/source-files";
 
 const AuthorProps = defineNestedType(() => ({
   name: 'Author',
