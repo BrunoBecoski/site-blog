@@ -4,6 +4,8 @@
 
 <img src=".github/cover.png" alt="cover" />
 
+<p>Site.set é um blog com postagem em Markdown, desenvolvido na Jornada Next.js da Rocketseat.</p>
+
 ## Principais Tecnologias
 
 - [React](https://react.dev)
