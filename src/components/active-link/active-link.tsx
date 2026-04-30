@@ -1,5 +1,6 @@
+"use client";
 import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
@@ -7,16 +8,17 @@ type ActiveLinkProps = {
   children: React.ReactNode
 } & LinkProps
 
-export const ActiveLink = ({ children, ...rest }: ActiveLinkProps) => {
-  const router = useRouter()
-  const isCurrentPath = 
-    router.pathname === rest.href
-    || router.asPath === rest.href 
-    || router.asPath === rest.as    
+export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
+  const linkPath = (typeof href === 'string' ? href : href.pathname) ?? ''
+  const pathname = usePathname()
+  const isActive = 
+    pathname === linkPath 
+    || pathname?.startsWith (`${linkPath}/`)
 
   return (
     <Link
-      className={cn('text-action-sm transition-colors', isCurrentPath ? 'text-blue-200 hover:text-blue-200' : 'text-gray-100 hover:text-blue-100' )}
+      href={href}
+      className={cn('text-action-sm transition-colors', isActive ? 'text-blue-200 hover:text-blue-200' : 'text-gray-100 hover:text-blue-100')}
       {...rest}
     >
       {children}
