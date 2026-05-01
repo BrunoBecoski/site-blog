@@ -1,12 +1,13 @@
 import { SearchIcon, XCircle } from "lucide-react";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 import { cn } from "@/lib/utils";
 
 export const Search = () => {
   const router = useRouter()
-  const querySearch = (router.query.search as string) ?? ''
+  const searchParams = useSearchParams()
+  const querySearch = searchParams?.get('search') ?? ''
 
   const handleSearch = useCallback((event: React.SubmitEvent) => {
     event.preventDefault()
@@ -21,19 +22,12 @@ export const Search = () => {
 
     router.push(
       `/blog?search=${encodeURIComponent(newQuerySearch)}`,
-      undefined,
-      {
-        shallow: true,
-        scroll: false
-      }
+      { scroll: false }
     )
   }
 
   const resetSearchInput = () => {
-    router.push('/blog', undefined, {
-      shallow: true,
-      scroll: false
-    })
+    router.push('/blog', { scroll: false })
   }
 
   return (

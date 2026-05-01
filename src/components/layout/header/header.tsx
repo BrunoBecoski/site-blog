@@ -1,17 +1,19 @@
-// import { useCallback, useState } from "react";
+"use client";
+
+import { useCallback, useState } from "react";
 import Link from "next/link";
-// import { Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { Logo } from "../../logo";
 import { ActiveLink } from "../../active-link";
 import { Button } from "../../ui/button";
 
 export const Header = () => {
-  // const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  // const handleMenu = useCallback(() => {
-  //   setIsOpen(!isOpen)
-  // }, [isOpen])
+  const handleMenu = useCallback(() => {
+    setIsOpen(!isOpen)
+  }, [isOpen])
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 backdrop-blur">
@@ -29,7 +31,7 @@ export const Header = () => {
               <Link href="/comecar">Começar</Link>
             </Button>
 
-            {/* <div className="flex md:hidden">
+            <div className="flex md:hidden">
               <Button variant="icon" size="icon" onClick={handleMenu}>
                 {isOpen 
                   ? <X className="size-5" />
@@ -43,7 +45,7 @@ export const Header = () => {
                   <ActiveLink href="/blog">Blog</ActiveLink>
                 </div>
               }
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
