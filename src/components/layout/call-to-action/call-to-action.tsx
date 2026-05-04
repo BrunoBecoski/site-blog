@@ -20,7 +20,9 @@ export const CallToAction = () => {
           <Button asChild>
             <Link href="/criar-loja">
               Criar a loja grátis
-              <ArrowRight />
+              <span>
+                <ArrowRight />
+              </span>
             </Link>
           </Button>
         </div>

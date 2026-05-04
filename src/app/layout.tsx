@@ -1,4 +1,6 @@
-import { Layout } from "@/components/layout"
+import "@/styles/globals.css";
+
+import { Layout } from "@/components/layout";
 
 export const metadata = {
   title: 'Site.set',
@@ -18,11 +20,11 @@ export default function RootLayout({
 
       <body>
         <main>
-            <Layout>
-              {children}
-            </Layout>
+          <Layout>
+            {children}
+          </Layout>
         </main>
       </body>
-  </html>
+    </html>
   )
 }

@@ -1,3 +1,5 @@
+import "@/styles/globals.css";
+
 import { allPosts } from "contentlayer/generated";
 
 import { BlogList } from "@/templates/blog";

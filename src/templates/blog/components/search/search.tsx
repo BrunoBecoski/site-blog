@@ -1,13 +1,16 @@
 import { SearchIcon, XCircle } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
 export const Search = () => {
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
   const router = useRouter()
   const searchParams = useSearchParams()
   const querySearch = searchParams?.get('search') ?? ''
+  const hasQuery = !!searchParams?.has('search')
 
   const handleSearch = useCallback((event: React.SubmitEvent) => {
     event.preventDefault()
@@ -30,6 +33,13 @@ export const Search = () => {
     router.push('/blog', { scroll: false })
   }
 
+  useEffect(() => {
+    console.log(hasQuery)
+    if(hasQuery) {
+      inputRef.current?.focus()
+    }
+  }, [hasQuery])
+
   return (
     <form
       onSubmit={handleSearch}
@@ -43,6 +53,7 @@ export const Search = () => {
       />
 
       <input
+        ref={inputRef}
         type="text"
         placeholder="Buscar"
         value={querySearch}
