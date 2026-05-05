@@ -38,7 +38,9 @@ export const FeatureSection = () => {
             <Button className="md:w-fit hidden mt-4 md:mt-auto md:flex" asChild>
               <Link href="/criar-loja">
                 Criar a loja grátis
-                <ArrowRight />
+                <span>
+                  <ArrowRight />
+                </span>
               </Link>
             </Button>
           </div>
@@ -57,7 +59,9 @@ export const FeatureSection = () => {
             <Button className="w-full gap-2 mt-4 md:hidden md:mt-auto " asChild>
               <Link href="/criar-loja">
                 Criar a loja grátis
-                <ArrowRight />
+                <span>
+                  <ArrowRight />
+                </span>
               </Link>
             </Button>
           </div>

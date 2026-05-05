@@ -34,7 +34,9 @@ export const HeroSection = () => {
               <Button className="w-fit" asChild> 
                 <Link href="/criar-loja">
                   Criar a loja grátis
-                  <ArrowRight />
+                  <span>
+                    <ArrowRight />
+                  </span>
                 </Link>
               </Button>
               <p className="text-gray-300 text-body-xs">
